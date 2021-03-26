@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@font-face {
+  font-family: "PermanentMarker-Regular";
+  src: local("PermanentMarker-Regular"),
+    url("./fonts/PermanentMarker-Regular.ttf") format("truetype");
+  font-weight: normal;
+}

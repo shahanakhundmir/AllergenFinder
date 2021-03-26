@@ -1,0 +1,15 @@
+
+.logo-title img{
+    height: 3em;
+    width: 3em;
+    float: left;
+    align-items:center;
+}
+
+.logo-title h1{
+    font-family:PermanentMarker-Regular;
+    color:  #EECA60;
+    font-size: 40px;
+
+}
+
