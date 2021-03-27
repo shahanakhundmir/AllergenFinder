@@ -4,14 +4,15 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import "./DropdownMenu.css";
 
 function DropdownMenu() {
-    return (
-        <DropdownButton id="dropdown-basic-button" title="Select Restaurant">
+  return (
+    <div className='dropdownmenu'>
+      <DropdownButton id="dropdown-basic-button" title="Select Restaurant">
         <Dropdown.Item href="#/action-1">Restaurant1</Dropdown.Item>
         <Dropdown.Item href="#/action-2">Restaurant2</Dropdown.Item>
         <Dropdown.Item href="#/action-3">Restaurant3</Dropdown.Item>
       </DropdownButton>
-      
-      )
+    </div>
+  )
 }
 
 export default DropdownMenu;

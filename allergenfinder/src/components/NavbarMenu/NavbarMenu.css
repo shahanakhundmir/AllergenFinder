@@ -1,14 +1,11 @@
-#nav {
-    margin: 0 0 3em 0;
-    list-style: none; 
-  }
+
   #nav li {
     float: left;
     border-bottom: 2px solid #68869A;
     display: block;
   }
   #nav li a {
-        padding: 0px 15px;
+        padding: 0px 20px;
         color: #68869A;
         border-right: 1px  #68869A;
 }

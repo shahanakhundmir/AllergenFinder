@@ -3,8 +3,7 @@ import "./NavbarMenu.css";
 
 function NavbarMenu() {
     return (
-    <section> 
-        <div>
+        <div className="navbarmenu">
             <ul id="nav">
                 <li><a href="#">Starters</a></li>
                 <li><a href="#">Mains</a></li>
@@ -13,6 +12,6 @@ function NavbarMenu() {
                 <li><a href="#">Drinks</a></li>
             </ul>
         </div>
-    </section>)
+        )
 }
 export default NavbarMenu;
