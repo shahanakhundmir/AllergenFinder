@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
-//import Fixed from 'react-bootstrap/Fixed';
-//import NavbarMenu from "../NavbarMenu/NavbarMenu";
+
 import "./LogoTitle.css";
 
 function LogoTitle() {
+
+  const [restaurants, setRestaurant] = useState([
+    {restId: '001', restName:'Nandos', branchName: 'London, Wembley'},
+    {restId: '002', restName:'Nandos', branchName: 'Manchester'},
+    {restId: '003', restName:'Bills', branchName: 'Swindon'},
+  ])
   return (
     <div>
       <Navbar className="nav-bar" collapseOnSelect expand="lg" fixed="top" >
@@ -17,9 +19,7 @@ function LogoTitle() {
           <img alt="logo" src="/images/crab.png" />{' '}Allergen Finder</Navbar.Brand>
         <Form inline className="ml-auto"  >
           <NavDropdown title="Restaurant Name" className="dropdown" >
-            <NavDropdown.Item className="menu-item" href="#action/3.1">Restaurant1</NavDropdown.Item>
-            <NavDropdown.Item className="menu-item" href="#action/3.2">Restaurant2</NavDropdown.Item>
-            <NavDropdown.Item className="menu-item" href="#action/3.3">Restaurant3</NavDropdown.Item>
+          {restaurants.map(rest => <NavDropdown.Item key={rest.restId} className="menu-item" href="#action/3.3">{rest.restName}({rest.branchName})</NavDropdown.Item>)}
           </NavDropdown>
         </Form>
       </Navbar>
@@ -29,7 +29,13 @@ function LogoTitle() {
 
 export default LogoTitle;
 
-
+/**
+ * <NavDropdown.Item className="menu-item" href="#action/3.1"></NavDropdown.Item>
+            <NavDropdown.Item className="menu-item" href="#action/3.2">Restaurant2</NavDropdown.Item>
+            <NavDropdown.Item className="menu-item" href="#action/3.3">Restaurant3</NavDropdown.Item>
+ * 
+ * 
+ */
 /**
  *
  *

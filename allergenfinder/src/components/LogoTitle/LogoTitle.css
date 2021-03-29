@@ -1,5 +1,6 @@
 .nav-bar{
     background-color: white;
+    z-index:9999;
 }
 
 img    {
@@ -20,6 +21,8 @@ img    {
     border-color:#EECA60;
     border-radius: 10px;
     color:#68869A;
+    margin-right: 80px;
+    
 }
 
 .menu-item{

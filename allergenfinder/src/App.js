@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Body from "./components/Body/Body";
 import NavbarMenu from "./components/NavbarMenu/NavbarMenu";
@@ -5,18 +6,18 @@ import NavbarMenu from "./components/NavbarMenu/NavbarMenu";
 //import DropdownMenu from "./components/DropdownMenu/DropdownMenu";
 import LogoTitle from "./components/LogoTitle/LogoTitle";
 import Footer from "./components/Footer/Footer";
-
-
 import "./App.css";
 
 
 function App() {
+
+
   return (
     <section id="menu bar">
       <div class="container-fluid">
         <div class="row align-items-center justify-content-between">
           <div>
-            <LogoTitle />
+            <LogoTitle/>
           </div>
         </div>
 
@@ -27,7 +28,8 @@ function App() {
         </div>
 
         <div class="row align-items-center justify-content-between">
-          <div><Body />
+          <div>
+            <Body />
           </div>
         </div>
 
