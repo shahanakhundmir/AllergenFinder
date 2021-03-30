@@ -5,19 +5,35 @@
   width: 100%;
   height: 80px;
   padding-bottom :25px;
-  
+  padding-top: 15px;
+  color: #68869A;
+
   }
-  
-  
-  #nav li {
-    float: left;
-    border-bottom: 2px solid #68869A;
-    display: block;
+
+  .mr-auto{
+    border-bottom: 1px solid #68869A;
   }
-  #nav li a {
-        padding: 0px 20px;
-        color: #68869A;
-        border-right: 1px  #68869A;
+
+
+.menu-item:hover{
+  color:#EECA60;
+}
+
+.restaurant-info{
+  border-radius: 20px;
+  border-color: #EECA60;
+  color: #EECA60;
+  background-color: white;
+}
+
+.restaurant-info:hover{
+  border-color: #68869A;
+  color: #68869A;
+  background-color: white;
+  
+
+
+
 }
   
   

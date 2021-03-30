@@ -10,14 +10,18 @@ import "./App.css";
 
 
 function App() {
-
+  const [restaurants, setRestaurant] = useState([
+    {restId: '001', restName:'Nandos', branchName: 'London, Wembley'},
+    {restId: '002', restName:'Nandos', branchName: 'Manchester'},
+    {restId: '003', restName:'Bills', branchName: 'Swindon'},
+  ])
 
   return (
-    <section id="menu bar">
+    <section id="app">
       <div class="container-fluid">
         <div class="row align-items-center justify-content-between">
           <div>
-            <LogoTitle/>
+            <LogoTitle restaurants= {restaurants}/>
           </div>
         </div>
 
