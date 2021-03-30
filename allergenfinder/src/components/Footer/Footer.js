@@ -1,8 +1,11 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 //import ReactTooltip from "react-tooltip";
-import OverlayTrigger from "react-tooltip";
-import Tooltip from "react-tooltip";
+//import OverlayTrigger from "react-tooltip";
+//import Tooltip from "react-tooltip";
+import Tooltip from 'react-bootstrap/Tooltip';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+//import Button from 'react-bootstrap/Button';
 
 import "./Footer.css";
 
@@ -12,9 +15,10 @@ function Footer() {
         <div className='footer'>
             <Navbar fixed="bottom" className='footer'>
                 <Navbar.Brand href="#home">
-                    <OverlayTrigger key='top' placement='top'
-                        overlay={<Tooltip id='tooltip-top'>Tooltip on <strong>TOP</strong></Tooltip>
-                        }>
+                    <OverlayTrigger overlay={<Tooltip id='tooltip-top'>Egg</Tooltip>}>
+                        <img src="\images\eggs_red_50x50.png" width="30" height="30" className="d-inline-block align-top" alt="" />
+                    </OverlayTrigger>
+                    <OverlayTrigger overlay={<Tooltip id='tooltip-top'>Fish</Tooltip>}>
                         <img src="/images/fish_red_50x50.png" width="30" height="30" className="d-inline-block align-top" alt="" />
                     </OverlayTrigger>
                 </Navbar.Brand>
@@ -23,6 +27,5 @@ function Footer() {
     )
 }
 export default Footer;
-
 
 

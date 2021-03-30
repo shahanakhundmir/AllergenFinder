@@ -14,11 +14,6 @@ function Body() {
                 <Card className="card"></Card>
                 <Card className="card"></Card>
             </CardDeck>
-            <CardDeck className="deck">
-                <Card className="card"></Card>
-                <Card className="card"></Card>
-                <Card className="card"></Card>
-            </CardDeck>
         </div>
     )
 }
