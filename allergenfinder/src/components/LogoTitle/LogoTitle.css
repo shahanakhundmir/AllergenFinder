@@ -1,5 +1,8 @@
 .nav-bar{
     background-color:white;
+    height: 60px;
+    padding-top:15px;
+    margin-left:0.5em;
     z-index:9999;
 }
 

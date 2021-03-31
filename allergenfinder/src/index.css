@@ -1,5 +1,7 @@
 body {
   margin: 0;
+ padding-left:3em;
+  
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -17,5 +19,18 @@ code {
   font-family: "PermanentMarker-Regular";
   src: local("PermanentMarker-Regular"),
     url("./fonts/PermanentMarker-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "NewTegomin-Regular";
+  src: local("NewTegomin-Regular"),
+    url("./fonts/NewTegomin-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "/PTSans-Regular";
+  src: local("/PTSans-Regular"),
+    url("./fonts/PTSans-Regular.ttf") format("truetype");
   font-weight: normal;
 }

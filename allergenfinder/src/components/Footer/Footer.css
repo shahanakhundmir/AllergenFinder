@@ -1,7 +1,14 @@
 .footer{
-height: 50px;
+
+height: 60px;
 background-color:white;
-border: 1.5px solid  #68869A;
+
+}
+
+img{
+    height: 40px;
+    width: 40px;
+    margin: 20px;
 }
 
 
