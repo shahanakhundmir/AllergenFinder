@@ -1,0 +1,13 @@
+.menu {
+    position:fixed;
+    top: 80px;
+    background: white;
+    width: 100%;
+    border-bottom: 1px solid #069;    
+}
+    
+.menu .container-fluid {
+    height: 20px;
+    width: 55%;
+  }
+  
