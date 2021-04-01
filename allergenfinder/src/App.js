@@ -43,6 +43,7 @@ function App() {
                 paddingBottom:'40px',
                 backgroundColor: "#68869A",
                 borderRadius: "10px",
+                
               }}>
                 <Row >
                   <Col>
