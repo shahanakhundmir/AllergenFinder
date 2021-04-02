@@ -6,6 +6,8 @@
   height: 90px;
   padding-bottom :20px;
   padding-top: 20px;
+  
+
   color: #68869A;
   }
 
@@ -13,24 +15,24 @@
     border-bottom: 1px solid #68869A;
 }
 
-.menuItem:hover{
+.menu-item:hover{
   color:#EECA60;
 }
 
-.restaurantInfo{
+.restaurant-info{
   border-radius: 20px;
   border-color: #EECA60;
   color: #EECA60;
   background-color: white;
 }
 
-.restaurantInfo:hover{
+.restaurant-info:hover{
   border-color: #68869A;
   color: #68869A;
   background-color: white;
 }
   
-.navbarCollapse{
+.navbar-collapse{
   background-color: white;
   border-bottom:0px;
 }

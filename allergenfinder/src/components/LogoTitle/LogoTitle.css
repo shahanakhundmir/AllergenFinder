@@ -1,25 +1,24 @@
-.navBar{
+.logo-nav-bar{
     background-color:white;
     height: 60px;
     padding-top:15px;
-    padding-left:0px;
     z-index:9999;
 }
 
-.navFont{
+.nav-font{
     font-family:PermanentMarker-Regular;
     color:  #EECA60!important;
     font-size: 35px;
     display:inline;
 }
 
-img{
+.header-logo{
     width:1.5em;
     height:1.5em;
     align-items:center;
 }
 
-.dropdown{
+.rest-dropdown{
     border: 1px solid;
     border-color:#EECA60;
     border-radius: 5px;
@@ -27,16 +26,16 @@ img{
     margin-right: 80px;
 }
 
-#dropdownTitle{
+#dropdown-title{
     color: #68869A;
 }
 
-.menuItem{
+.rest-name{
     color: #68869A;
     background-color:white;
 }
 
-.menuItem:hover{
+.rest-name:hover{
     background-color: white;
     color:#EECA60;
 }

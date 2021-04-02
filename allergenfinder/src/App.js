@@ -2,14 +2,11 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MenuCard from "./components/MenuCard/MenuCard";
 import NavbarMenu from "./components/NavbarMenu/NavbarMenu";
-//import TitleLogo from "./components/TitleLogo/TitleLogo";
-//import DropdownMenu from "./components/DropdownMenu/DropdownMenu";
 import LogoTitle from "./components/LogoTitle/LogoTitle";
 import Footer from "./components/Footer/Footer";
-import { Grid, Row, Col, NavbarBrand } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import "./App.css";
-
 
 function App() {
   const [restaurants, setRestaurant] = useState([
@@ -29,12 +26,12 @@ function App() {
         </Row>
         <Row>
           <Col>
-            <Container className="menuContainer">
+            <Container className="menu-container">
               <Row >
-                <Col className="menuCol">
+                <Col >
                   <MenuCard />
                 </Col>
-                <Col className="menuCol">
+                <Col >
                   <MenuCard />
                 </Col>
               </Row>
