@@ -1,16 +1,6 @@
-
-.menuCardClass{
-    margin-top: 20px;
-    margin-bottom: 100;
-    border-radius: 10px;
-    padding: 20px;
-    padding-bottom: 0;
-   
-}
-
-.menuCard{
+.menu-card{
     height: 12rem;
-    margin: 10px;
+    margin: 1.50rem;
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -18,36 +8,50 @@
     border: 3px solid #EECA60;
     border-radius: 20px;
 }
+.card-body{
+    margin :10px;
+    padding : 0;
+}
 
+.card-image{
+    height: 6rem;
+    width:7rem;
+    margin: 10px;
+    border-radius :20px;
+    object-fit: cover;
+}
 
-
-Card.Title{
-    text-align: left;
-    padding: 0rem; 
+.card-title{
+    text-align:start;
     font-family:NewTegomin-Regular ;
-    font-size: 15;
+    font-size: 1.5rem;
+    margin-bottom:3px;
 }
 
-Card.Text{
-    font-size: 10;
-    text-align: justify;
-    padding: 0rem;
-    font-family: PTSans-Regular;
-}
-
-Badge{
-    background-color: red;
+.card-badge{
     margin: 0px;
+    padding:0px;
     height: 2.5rem;
     width: 2.5rem;
     object-fit: fill;
     background-color: white;
 }
 
-.allergenImg{
+.allergen-img{
     height:2rem;
     width: 2rem;
+    margin: 10px 8px  0 0;
     object-fit: fill;
 }
-    
-/**variant="light" */
+
+.card-text{ 
+    font-size: 1rem;
+    padding: 0rem;
+    font-family: PTSans-Regular;
+}
+
+.card-footer{
+    background-color: white;
+    border: 0;
+    padding:0 0 3px 0;;
+}
