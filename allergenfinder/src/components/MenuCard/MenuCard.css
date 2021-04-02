@@ -1,7 +1,3 @@
-.box{
-    top:200;
-}
-
 
 .menuCardClass{
     margin-top: 20px;
@@ -11,3 +7,47 @@
     padding-bottom: 0;
    
 }
+
+.menuCard{
+    height: 12rem;
+    margin: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    border: 3px solid #EECA60;
+    border-radius: 20px;
+}
+
+
+
+Card.Title{
+    text-align: left;
+    padding: 0rem; 
+    font-family:NewTegomin-Regular ;
+    font-size: 15;
+}
+
+Card.Text{
+    font-size: 10;
+    text-align: justify;
+    padding: 0rem;
+    font-family: PTSans-Regular;
+}
+
+Badge{
+    background-color: red;
+    margin: 0px;
+    height: 2.5rem;
+    width: 2.5rem;
+    object-fit: fill;
+    background-color: white;
+}
+
+.allergenImg{
+    height:2rem;
+    width: 2rem;
+    object-fit: fill;
+}
+    
+/**variant="light" */

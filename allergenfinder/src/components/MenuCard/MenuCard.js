@@ -5,7 +5,6 @@ import Badge from 'react-bootstrap/Badge'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 
-
 import './MenuCard.css'
 
 function MenuCard() {
@@ -17,28 +16,15 @@ function MenuCard() {
     ]
     const renderCard = (card, index) => {
         return (
-            <Card key={index} className="box"
-                style={{
-                    height: "12rem",
-                    width: "30rem",
-                    margin: "10px",//gap between cards
-                    overflow: "hidden",
-                    display: "flex",
-                    flexDirection: "row",
-                    cursor: "pointer",
-                    border: "3px solid #EECA60",
-                    borderRadius: '20px',
-                }} >
+            <Card key={index} className="menuCard">
                 <Card.Img src={card.image} style={{ height: "8rem", width: "10rem", objectFit: "cover" }} />
-                <Card.Body
-                    style={{
-                    }}>
-                    <Card.Title style={{ textAlign: "left", padding: "0rem", fontFamily: 'NewTegomin-Regular', fontSize: "15" }} >{card.title}</Card.Title>
-                    <Card.Text style={{ fontSize: "10", textAlign: "justify", padding: "0rem", fontFamily: 'PTSans-Regular' }}>{card.discription}
+                <Card.Body>
+                    <Card.Title>{card.title}</Card.Title>
+                    <Card.Text>{card.discription}
                         <div style={{ width: "auto", marginTop: "0px" }}>
-                            <Badge variant="light" style={{ backgroundColor: "red", margin: "0px", height: "2.5rem", width: "3rem", objectFit: "fill", backgroundColor: "white" }}>
+                            <Badge>
                                 <OverlayTrigger overlay={<Tooltip id='tooltip-top'>{card.tip}</Tooltip>}>
-                                    <img src={card.allergen} alt="" style={{ height: "2rem", width: "2.5rem", objectFit: "fill" }}></img>
+                                    <img src={card.allergen} alt="" className="allergenImg"></img>
                                 </OverlayTrigger>
                             </Badge>
                         </div>

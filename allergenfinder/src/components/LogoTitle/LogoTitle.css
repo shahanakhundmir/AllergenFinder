@@ -1,22 +1,22 @@
-.nav-bar{
+.navBar{
     background-color:white;
     height: 60px;
     padding-top:15px;
-    margin-left:0.5em;
+    padding-left:0px;
     z-index:9999;
 }
 
-img    {
-    width:1.5em;
-    height:1.5em;
-    align-items:center;
-  }
-
-.navfont{
+.navFont{
     font-family:PermanentMarker-Regular;
     color:  #EECA60!important;
     font-size: 35px;
     display:inline;
+}
+
+img{
+    width:1.5em;
+    height:1.5em;
+    align-items:center;
 }
 
 .dropdown{
@@ -25,19 +25,20 @@ img    {
     border-radius: 5px;
     color:#68869A;
     margin-right: 80px;
-    
 }
 
-.menu-item{
+#dropdownTitle{
+    color: #68869A;
+}
+
+.menuItem{
     color: #68869A;
     background-color:white;
 }
 
-.menu-item:hover{
+.menuItem:hover{
     background-color: white;
     color:#EECA60;
 }
 
-#dropdown-title{
-    color: #68869A;
-}
+

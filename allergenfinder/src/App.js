@@ -21,50 +21,29 @@ function App() {
   return (
     <section id="app">
       <div className="container-fluid">
-        <div className="row align-items-center justify-content-between">
-          <div>
-            <LogoTitle restaurants={restaurants} />
-          </div>
-        </div>
-
-        <div className="row align-items-center justify-content-between">
-          <div>
-            <NavbarMenu />
-          </div>
-        </div>
-
-        <div className="row align-items-center justify-content-between">
-          <div >
-            <Row >
-              <Container style={{
-                position: 'relative',
-                top: '170px',
-                marginBottom:'200px',
-                paddingBottom:'40px',
-                backgroundColor: "#68869A",
-                borderRadius: "10px",
-                
-              }}>
-                <Row >
-                  <Col>
-                    <MenuCard />
-                  </Col>
-                  <Col >
-                    <MenuCard />
-                  </Col>
-                </Row>
-              </Container>
-            </Row>
-
-          </div>
-        </div>
-
-        <div className="row align-items-center justify-content-between">
-          <div>
-            <Footer/>
-          </div>
-        </div>
-
+        <Row>
+          <LogoTitle restaurants={restaurants} />
+        </Row>
+        <Row>
+          <NavbarMenu />
+        </Row>
+        <Row>
+          <Col>
+            <Container className="menuContainer">
+              <Row >
+                <Col className="menuCol">
+                  <MenuCard />
+                </Col>
+                <Col className="menuCol">
+                  <MenuCard />
+                </Col>
+              </Row>
+            </Container>
+          </Col>
+        </Row>
+        <Row>
+          <Footer />
+        </Row>
       </div>
     </section >
   )
