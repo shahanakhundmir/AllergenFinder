@@ -3,10 +3,9 @@ import React, {useState} from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
-
 import "./LogoTitle.css";
 
-function LogoTitle({restaurants}) {
+function LogoTitle({restaurants, selectRestaurant}) {
 
   
   return (
@@ -16,7 +15,10 @@ function LogoTitle({restaurants}) {
           <img className="header-logo" alt="logo" src="/images/crab.png" />{' '}Allergen Finder</Navbar.Brand>
         <Form inline className="ml-auto"  >
           <NavDropdown title="Restaurant Name" id="dropdown-title" className="rest-dropdown" >
-          {restaurants.map(rest => <NavDropdown.Item key={rest.restId} className="rest-name" href="#action/3.3">{rest.restName}({rest.branchName})</NavDropdown.Item>)}
+          {restaurants.map(rest => <NavDropdown.Item  className="rest-name" 
+          onClick={()=>selectRestaurant(rest.restId)} 
+          key={rest.restId} 
+          href="#action/3.3">{rest.restName}</NavDropdown.Item>)}
           </NavDropdown>
         </Form>
       </Navbar>
