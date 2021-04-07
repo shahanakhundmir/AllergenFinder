@@ -30,7 +30,7 @@ function MenuCard(props) {
            <Card key={props.card.id} style={{}} className="menu-card">
                 <Row className="margin" style={{ border: '2px solid yellow' }}>
                     <Col xs={4} sm={4} md={4} lg={4} className="text-center" style={{ border: '2px solid red' }}>
-                        <Card.Img style ={{height: '4rem',width: '5rem', borderRadius: '10px', objectFit: 'cover'}} className="" src={props.card.image} />
+                        <Card.Img style ={{height: '4rem',width: '5rem', borderRadius: '10px', objectFit: 'cover'}} className="" src={props.card.image} alt="foodimg"/>
                     </Col>
                     <Col className="margin" style={{ border: '2px solid blue' }}>
                         <Row style={{ border: '2px solid orange' }}>

@@ -20,7 +20,8 @@ function MenuList(props) {
         {
             id: "003", title: "Sunset Burger", discription: "Two chicken thighs, melting cheddar cheese, smoky red pepper chutney with lettuce ...", image: "https://www.nandos.co.uk/sites/default/files/M_BPW_SunsetBurger_smaller.jpg",
             allergen: [
-                { allergenImage: "/images/image3.png", tooltip: "Treenuts" }
+                { allergenImage: "/images/image3.png", tooltip: "Treenuts" },
+                { allergenImage: "/images/image2.png", tooltip: "Celery" }
             ]
         },
         {
