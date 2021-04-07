@@ -45,8 +45,8 @@ function App() {
         <Row>
           <Col>
             <Container className="menu-container">
-              <Row >
-                <MenuCard selectedMenu = {selectedMenu}/>
+              <Row style={{ border: '2px solid turquoise' }}>
+                <MenuCard/>
               </Row>
             </Container>
           </Col>
