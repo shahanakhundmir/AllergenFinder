@@ -14,7 +14,7 @@ function LogoTitle({restaurants, selectRestaurant}) {
         <Navbar.Brand className='nav-font'>
           <img className="header-logo" alt="logo" src="/images/crab.png" />{' '}Allergen Finder</Navbar.Brand>
         <Form inline className="ml-auto"  >
-          <NavDropdown title="Restaurant Name" id="dropdown-title" className="rest-dropdown" >
+          <NavDropdown title="Restaurant Name" id="dropdown-title" className="rest-dropdown">
           {restaurants.map(restaurant => <NavDropdown.Item  className="rest-name" 
           onClick={()=>selectRestaurant(restaurant.restid)} 
           key={restaurant.restid} 
@@ -26,4 +26,7 @@ function LogoTitle({restaurants, selectRestaurant}) {
   )
 }
 export default LogoTitle;
-
+ /**
+  * 
+  * onClick={()=>refreshMenu()}
+  */
