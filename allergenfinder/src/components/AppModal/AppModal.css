@@ -1,33 +1,9 @@
-import React, { useState } from 'react';
-import { Modal, Button, Row, Col, Form } from 'react-bootstrap';
-
-
-function AppModal({show,handleShow}) {
-    //const [show, setShow] = useState(false);
-
-  const handleClose = () => {show.setShow(false);
-    }
-
-  handleShow = () => show.setShow(true);
-    return (
-        <div>
-          
-          <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Memu Card Popup</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Here is the detail for your dish</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-            
-        </div>
-    )
+.Modal{
+    padding-top: 200px;
 }
-export default AppModal;
+
+.Modal-image{
+    width: 90%;
+    height: 120px;
+    object-fit: contain;
+}
