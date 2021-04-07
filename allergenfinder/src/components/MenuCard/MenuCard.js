@@ -7,17 +7,15 @@ import Tooltip from 'react-bootstrap/Tooltip'
 import { Row, Col } from 'react-bootstrap';
 import './MenuCard.css'
 
-function MenuCard() {
-    const cardInfo = [
-        { id: "001", title: "Halloumi Sticks & Dip", description: "Five chunky sticks of grilled halloumi with chilli jam for dipping...", image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/26/13/halloumisticks.jpg?width=990&auto=webp&quality=75", allergen: "/images/image14.png", tip: "Lupin" },
-        { id: "002", title: "5 Chicken Wings", description: "Flame-grilled, infused with PERi-PERi and perfect for pairing with sides. Served...", image: "https://cdn.leitesculinaria.com/wp-content/uploads/2012/06/chinese-five-spice-chicken-wings-fp.jpg.optimal.jpg", allergen: "/images/image2.png", tip: "Celery" },
-    ]
+function MenuCard(selectedMenu) {
+    
+    const cardInfo = selectedMenu.selectedMenu;
     const renderCard = (card, index) => {
         return (
             <Card key={index} style={{}} className="menu-card">
                 <Row className="margin" style={{ border: '2px solid yellow' }}>
                     <Col xs={4} sm={4} md={4} lg={4} className="text-center" style={{ border: '2px solid red' }}>
-                        <Card.Img style ={{height: '4rem',width: '5rem', borderRadius: '10px'}} className="" src={card.image} />
+                        <Card.Img style ={{height: '4rem',width: '5rem', borderRadius: '10px', objectFit: 'cover'}} className="" src={card.image} />
                     </Col>
                     <Col className="margin" style={{ border: '2px solid blue' }}>
                         <Row style={{ border: '2px solid orange' }}>
