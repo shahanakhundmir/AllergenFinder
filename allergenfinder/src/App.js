@@ -53,8 +53,6 @@ function App() {
     { restid: '002', restname: 'Bills', branchname: 'Swindon' }
   ])
 
-
-
  /* const [cardInfo, setCardInfo] = useState([
     { restid: "001", id: "001", submenu: 'main', title: "NM-Halloumi Sticks & Dip", description: "Five chunky sticks of grilled halloumi with chilli jam for dipping...", image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/26/13/halloumisticks.jpg?width=990&auto=webp&quality=75", allergen: "/images/image14.png", tip: "Lupin" },
     { restid: "001", id: "002", submenu: 'main', title: "NM-5 Chicken Wings", description: "Flame-grilled, infused with PERi-PERi and perfect for pairing with sides. Served...", image: "https://cdn.leitesculinaria.com/wp-content/uploads/2012/06/chinese-five-spice-chicken-wings-fp.jpg.optimal.jpg", allergen: "/images/image2.png", tip: "Celery" },
@@ -85,7 +83,6 @@ function App() {
   }
 
   // filters menu items by sub menu  selectSubMenu
-  //comment
   const selectSubMenu = sub => {
     console.log(sub)
     console.log('submenu')
@@ -107,7 +104,9 @@ function App() {
           <Col>
             <Container className="menu-container">
               <Row style={{ border: '2px solid turquoise' }}>
+
                 <MenuList selectedMenu={selectedMenu} />
+
               </Row>
             </Container>
           </Col>
