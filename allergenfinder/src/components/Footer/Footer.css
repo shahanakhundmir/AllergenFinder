@@ -22,6 +22,9 @@
     width: 2.4rem;
     margin: 1.28rem;
 }
+.allergen-icon:hover {
+    transform: scale(1.30);
+}
 
 @media only screen and (max-width: 800px)  {
     .allergen-icon {
@@ -29,8 +32,10 @@
         width:1.2rem;
         margin:0;
     }
+
+    .allergen-icon:hover {
+        transform: scale(1.30);
+    }
 }
 
-.test{
-}
 
