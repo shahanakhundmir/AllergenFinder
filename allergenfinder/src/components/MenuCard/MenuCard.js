@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card'
 //import Badge from 'react-bootstrap/Badge'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
@@ -17,20 +17,20 @@ function MenuCard(props) {
     const handleClose = () => {
         setShow(false)
     }
-    const renderAllergen = allergen.map((d)=>
-                <OverlayTrigger overlay={<Tooltip id='tooltip-top'>{d.tooltip}</Tooltip>}>
-                    <img className="badge-image" src={d.allergenImage} alt="" ></img>
-                </OverlayTrigger>
-)
+    const renderAllergen = allergen.map((d) =>
+        <OverlayTrigger overlay={<Tooltip id='tooltip-top'>{d.tooltip}</Tooltip>}>
+            <img className="allergen-img" src={d.allergenImage} alt="" style={{}} ></img>
+        </OverlayTrigger>
+    )
 
-    const cardInfo = props.selectedMenu.selectedMenu;
-   
+    //const cardInfo = props.selectedMenu.selectedMenu;
+
     return (
-      <div>
-           <Card key={props.card.id} style={{}} className="menu-card">
+        <div>
+            <Card key={props.card.id} style={{}} className="menu-card" onClick={onCardClick}>
                 <Row className="margin" style={{ border: '2px solid yellow' }}>
                     <Col xs={4} sm={4} md={4} lg={4} className="text-center" style={{ border: '2px solid red' }}>
-                        <Card.Img style ={{height: '4rem',width: '5rem', borderRadius: '10px', objectFit: 'cover'}} className="" src={props.card.image} alt="foodimg"/>
+                        <Card.Img style={{ height: '4rem', width: '5rem', borderRadius: '10px', objectFit: 'cover' }} className="" src={props.card.image} alt="foodimg" />
                     </Col>
                     <Col className="margin" style={{ border: '2px solid blue' }}>
                         <Row style={{ border: '2px solid orange' }}>
@@ -38,13 +38,13 @@ function MenuCard(props) {
                         </Row>
                         <Row style={{ border: '2px solid orange' }}>
                             <Card.Footer className="card-footer">
-                            {renderAllergen}
+                                {renderAllergen}
                             </Card.Footer>
                         </Row>
                     </Col>
                 </Row>
                 <Row className="margin" style={{ border: '2px solid green' }}>
-                    <Card.Text className="">{props.card.description}</Card.Text>
+                    <Card.Text className="card-text">{props.card.description}</Card.Text>
                 </Row>
             </Card>
             {show ? <AppModal
@@ -52,11 +52,11 @@ function MenuCard(props) {
                 id={props.card.id}
                 image={props.card.image}
                 title={props.card.title}
-                discription={props.card.discription}
+                description={props.card.description}
                 allergen={renderAllergen}
                 onClose={handleClose} /> : ''}
                 )
-      </div> 
+        </div>
     );
 }
 export default MenuCard;

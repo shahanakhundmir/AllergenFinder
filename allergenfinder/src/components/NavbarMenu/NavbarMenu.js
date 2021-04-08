@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button';
 import "./NavbarMenu.css";
 
 function NavbarMenu({selectSubMenu}) {
+
+   
     return (
         <div>
             <Navbar className="menu" expand="md" fixed="top" >
@@ -20,7 +22,7 @@ function NavbarMenu({selectSubMenu}) {
                         <Nav.Link onClick={()=>selectSubMenu('drinks')}className="menu-item" href="#drinks">Drinks</Nav.Link>
                     </Nav>
                     <Form inline className="container-fluid">
-                        <Button className="restaurant-info">Restaurant Information</Button>
+                        <Button className="restaurant-info" >Restaurant Information</Button>
                     </Form>
                 </Navbar.Collapse>
             </Navbar>

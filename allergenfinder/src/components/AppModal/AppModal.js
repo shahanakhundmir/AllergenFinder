@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import "./AppModal.css"
 
-function AppModal({ menu, show, image, id, title, discription, allergen, onClose }) {
+function AppModal({ menu, show, image, id, title, description, allergen, onClose }) {
     console.log({ id })
 
     const status = show
@@ -17,7 +17,7 @@ function AppModal({ menu, show, image, id, title, discription, allergen, onClose
                 <Modal.Title className="modal-title">{title}</Modal.Title>
                 <Modal.Body>
                     <img className="Modal-image" alt="Pop-up" src={image} />
-                    <p className="modal-discription">{discription}</p>
+                    <p className="modal-description">{description}</p>
                     <div>{allergen}</div>
                 </Modal.Body>
                 <Modal.Footer>
