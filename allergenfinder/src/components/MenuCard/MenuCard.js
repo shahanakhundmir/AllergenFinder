@@ -7,7 +7,7 @@ import Tooltip from 'react-bootstrap/Tooltip'
 import { Row, Col } from 'react-bootstrap';
 import './MenuCard.css'
 import AppModal from '../AppModal/AppModal';
-
+//comment
 function MenuCard(props) {
     const allergen = props.card.allergen
     const [show, setShow] = useState(false)

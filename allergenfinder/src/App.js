@@ -85,6 +85,7 @@ function App() {
   }
 
   // filters menu items by sub menu  selectSubMenu
+  //comment
   const selectSubMenu = sub => {
     console.log(sub)
     console.log('submenu')
