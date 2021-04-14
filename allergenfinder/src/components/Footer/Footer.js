@@ -4,66 +4,19 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import "./Footer.css";
 
-function Footer() {
+
+
+function Footer({allergens, selectAllergen}) {
     return (
         <div className="div-footer">
             <Navbar fixed="bottom" className="footer">
                 <Navbar.Brand className="footer-brand" href="#home">
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Gluten</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image1.png" alt="" />
-                    </OverlayTrigger>
-                    &nbsp;
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Celery</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image2.png"alt="" />
-                    </OverlayTrigger>
-                    &nbsp;
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Treenuts</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image3.png" alt="" />
-                    </OverlayTrigger>
-                    &nbsp;
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Fish</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image4.png" alt="" />
-                    </OverlayTrigger>
-                    &nbsp;
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Soy</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image5.png" alt="" />
-                    </OverlayTrigger>
-                    &nbsp;
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Sesame</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image6.png" alt="" />
-                    </OverlayTrigger>
-                    &nbsp;
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Peanuts</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image7.png" alt="" />
-                    </OverlayTrigger>
-                    &nbsp;
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Crustaceans</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image8.png" alt="" />
-                    </OverlayTrigger>
-                    &nbsp;
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Eggs</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image9.png" alt="" />
-                    </OverlayTrigger>
-                    &nbsp;
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Molluscs</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image10.png" alt="" />
-                    </OverlayTrigger>
-                    &nbsp;
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Milk</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image11.png" alt="" />
-                    </OverlayTrigger>
-                    &nbsp;
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Mustard</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image12.png" alt="" />
-                    </OverlayTrigger>
-                    &nbsp;
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Sulphur Dioxide Sulphites</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image13.png" alt="" />
-                    </OverlayTrigger>
-                    &nbsp;
-                    <OverlayTrigger overlay={<Tooltip id="tooltip-top">Lupin</Tooltip>}>
-                        <img className= "allergen-icon" src="/images/image14.png" alt="" />
-                    </OverlayTrigger>
+                    {allergens.map(allergen => <OverlayTrigger 
+                    overlay={<Tooltip id="tooltip-top">{allergen.allergenname}</Tooltip>}>
+                        <img onClick={()=>selectAllergen(allergen.allergenname)} 
+                        key={allergen.allergenid}
+                        className= "allergen-icon" src={allergen.image} alt="" />
+                    </OverlayTrigger>)}
                 </Navbar.Brand>
             </Navbar>
         </div >

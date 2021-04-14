@@ -8,7 +8,7 @@ import { Row, Col } from 'react-bootstrap';
 import './MenuCard.css'
 import AppModal from '../AppModal/AppModal';
 //comment
-function MenuCard(props) {
+function MenuCard(props, selectedAllergens) {
     const allergen = props.card.allergen
     const [show, setShow] = useState(false)
     const onCardClick = () => {
@@ -26,70 +26,47 @@ function MenuCard(props) {
     //const cardInfo = props.selectedMenu.selectedMenu;
 
     return (
-        <div>
-            <Card key={props.card.id} style={{}} className="menu-card" onClick={onCardClick}>
-                <Row className="margin" style={{ border: '2px solid yellow' }}>
-                    <Col xs={4} sm={4} md={4} lg={4} className="text-center" style={{ border: '2px solid red' }}>
-                        <Card.Img style={{ height: '4rem', width: '5rem', borderRadius: '10px', objectFit: 'cover' }} className="" src={props.card.image} alt="foodimg" />
+        <div onClick={onCardClick} style={{ backgroundColor: 'white', borderRadius: 15, margin: 15, padding: 15,  border: "2px solid brown" }} className="menu-card" >
+
+            {/** key={props.card.id} className="menu-card"  className="allergy" 
+            className={props.card.allergen ==="Gluten" ? "allergy" : ""*/}
+    
+
+                <Row style={{ border: '2px solid yellow' }}>
+                    <Col xs={12} sm={4} md={4} lg={4} className="d-flex align-items-center justify-content-center" style={{}}>
+                        <img className="card-image" src={props.card.image} alt="foodimg" />
                     </Col>
-                    <Col className="margin" style={{ border: '2px solid blue' }}>
+                    <Col style={{ border: '2px solid blue' }}>
                         <Row style={{ border: '2px solid orange' }}>
-                            <Card.Title className="card-title ">{props.card.title}</Card.Title>
+                            <Col className="card-title">
+                                {props.card.title}
+                            </Col>
                         </Row>
                         <Row style={{ border: '2px solid orange' }}>
-                            <Card.Footer className="card-footer">
+                            <Col className="card-footer">
                                 {renderAllergen}
-                            </Card.Footer>
+                            </Col>
                         </Row>
                     </Col>
                 </Row>
-                <Row className="margin" style={{ border: '2px solid green' }}>
-                    <Card.Text className="card-text">{props.card.description}</Card.Text>
-                </Row>
-            </Card>
-            {show ? <AppModal
-                show={show}
-                id={props.card.id}
-                image={props.card.image}
-                title={props.card.title}
-                description={props.card.description}
-                allergen={renderAllergen}
-                onClose={handleClose} /> : ''}
-                )
-        </div>
-    );
-}
-export default MenuCard;
-
-
-
-/**
- *
- *
- */
-/**
- * const renderCard = (card, index) => {
-        return (
-            <Card key={index}
-            >
-                <Row style={{ border: '1px solid red'}}>
-                    <Col style={{ border: '1px solid pink'}} className="text-center">
-                    <img style={{width:'1.5em', height:'1.5em'}}className="" alt="logo" src="/images/crab.png" />
+                <Row style={{ border: '2px solid green' }}>
+                    <Col className="card-text">
+                        {props.card.description}
                     </Col>
-                    <Col style={{ border: '1px solid blue'}}>2 of 2</Col>
-                </Row>
-                <Row>
-                    <Col>1 of 3</Col>
-                    <Col>2 of 3</Col>
-                    <Col>3 of 3</Col>
-                </Row>
-            </Card>)
-    }
-    return (
-        <div>
-            {cardInfo.map(renderCard)}
-        </div>
+                </Row >
+      
+            {
+                show ? <AppModal
+                    show={show}
+                    id={props.card.id
+                    }
+                    image={props.card.image}
+                    title={props.card.title}
+                    description={props.card.description}
+                    allergen={renderAllergen}
+                    onClose={handleClose} /> : ''
+            }
+        </div >
     );
 }
 export default MenuCard;
- */
