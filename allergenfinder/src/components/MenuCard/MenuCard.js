@@ -28,7 +28,6 @@ function MenuCard(props) {
         </OverlayTrigger>)
 
     return (
-        
         <div onClick={onCardClick} className={`menu-card ${Object.values(props.card.allergen).map(allergen => 
                                                 allergen.tooltip).filter(allergen => selectedAllergens.includes(allergen)).length !== 0 ? 'allergy' : ''}`}>
                 <Row>

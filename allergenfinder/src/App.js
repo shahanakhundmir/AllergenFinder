@@ -92,42 +92,21 @@ function App() {
       return selectedRestaurant === "" || card.restid === selectedRestaurant });  
     setSelectedMenu(selectedMenu)}, [selectedRestaurant, cardInfo])
     
-
 /*
   useEffect(() => {
     const selectedMenu = cardInfo.filter(card => {
       return selectedMenuCategory === "" || card.submenu === selectedMenuCategory & card.restid === selectedRestaurant});  
     setSelectedMenu(selectedMenu)}, [selectedRestaurant, selectedMenuCategory, cardInfo])
-
+*/
 
    /** const selectSubMenu = sub => {
       console.log(sub)
       console.log('submenu')
       const filteredSubMenu = selectedMenu.filter(menuItem => menuItem.submenu === sub)
       setSelectedMenu(filteredSubMenu)
-    }
+    }*/
   
-  /**  filters menu items by restaurant
-  const selectRestaurant = id => {
-    refreshMenu();
-    const filteredMenu = selectedMenu.filter(menuItem => menuItem.restid === id)
-    setSelectedMenu(filteredMenu)
-  }
-  // refreshes to full menu before filtering 
-  const refreshMenu = () => {
-    setSelectedMenu(cardInfo)
-    console.log('refreshed')
-    console.log(selectedMenu)
-  }*/
-
-// filters menu items by restaurant
-
-
-
-
   // filters menu items by sub menu  selectSubMenu
-  
-
   const selectAllergen = allergen =>{
     // if clicked allergen isn't in the list add it else remove it
     setSeletedAllergens(selectedAllergens => selectedAllergens.indexOf(allergen)=== -1 ? [...selectedAllergens, allergen]:
@@ -159,3 +138,15 @@ function App() {
 }
 export default App;
 
+/**  filters menu items by restaurant
+  const selectRestaurant = id => {
+    refreshMenu();
+    const filteredMenu = selectedMenu.filter(menuItem => menuItem.restid === id)
+    setSelectedMenu(filteredMenu)
+  }
+  // refreshes to full menu before filtering 
+  const refreshMenu = () => {
+    setSelectedMenu(cardInfo)
+    console.log('refreshed')
+    console.log(selectedMenu)
+  }*/
