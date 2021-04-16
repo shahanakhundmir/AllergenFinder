@@ -7,3 +7,17 @@
     height: 120px;
     object-fit: contain;
 }
+.Modal-ingredients{
+    Line-Height:0.2px
+}
+.title-font{
+    font-family:NewTegomin-Regular ;
+    font-size: 1.5rem;
+}
+
+.text-font{ 
+    font-size: 1rem;
+    font-family: PTSans-Regular; 
+}
+
+

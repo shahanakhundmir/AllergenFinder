@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import MenuCard from '../MenuCard/MenuCard';
 //comment
-function MenuList({selectedMenu}) {
-   
-
+function MenuList({selectedMenu, selectedAllergens}) {
+    console.log('menulist ' + selectedAllergens)
     return (
-        <div className="menuCardClass">
+        <div className="menuCardClass" style = {{display:"flex",flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between"}}>
+             {console.log("menulist: " + selectedAllergens)}
             {selectedMenu.map((card, index) => (
-                <MenuCard key={card.id} index={index} card={card} />
+                <MenuCard  key={card.id} index={index} card={card} selectedAllergens={selectedAllergens}/>
             ))}
         </div>
     );
