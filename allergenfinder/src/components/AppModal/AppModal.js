@@ -3,13 +3,10 @@ import { Modal, Button } from 'react-bootstrap';
 import "./AppModal.css"
 
 function AppModal({ menu, show, image, id, title, description, ingredients, allergen, onClose }) {
-    console.log({ id })
-
+    //console.log({ id })
     const status = show
-
     const handleClose = () => onClose();
-
-    const handleShow = () => show.setShow(true);
+    const handleShow = () => show.setShow(true)
 
     return (
         <div>

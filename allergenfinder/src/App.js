@@ -37,18 +37,22 @@ function App() {
     //Menu items for Bill's restaurant options:- main and starter
     {
       restid: "002", restname: "Bills", id: "005", submenu: 'main', title: "Bills Main-Halloumi Sticks & Dip2", description: "2Five chunky sticks of grilled halloumi with chilli jam for dipping...", image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/26/13/halloumisticks.jpg?width=990&auto=webp&quality=75",
+      ingredients:["ground chuck","salt"],
       allergen: [{ allergenImage: "/images/image14.png", tooltip: "Lupin" }]
     },
     {
       restid: "002", restname: "Bills", id: "006", submenu: 'main', title: "Bills Main-5 Chicken Wings2", description: "2Flame-grilled, infused with PERi-PERi and perfect for pairing with sides. Served...", image: "https://cdn.leitesculinaria.com/wp-content/uploads/2012/06/chinese-five-spice-chicken-wings-fp.jpg.optimal.jpg",
+      ingredients:["ground chuck","salt"],
       allergen: [{ allergenImage: "/images/image2.png", tooltip: "Celery" }]
     },
     {
       restid: "002", restname: "Bills", id: "007", submenu: 'starter', title: "Bills Starter-Sunset Burger2", description: "2Two chicken thighs, melting cheddar cheese, smoky red pepper chutney with lettuce ...", image: "https://www.nandos.co.uk/sites/default/files/M_BPW_SunsetBurger_smaller.jpg",
+      ingredients:["ground chuck","salt"],
       allergen: [{ allergenImage: "/images/image3.png", tooltip: "Treenuts" }]
     },
     {
       restid: "002", restname: "Bills", id: "009", submenu: 'starter', title: "Bills Starter-The Great Imitator Wrap2", description: "2Our PERi-Plant strips are made from pea-protein but taste...", image: "https://www.nandos.co.uk/sites/default/files/wrap_live.png",
+      ingredients:["ground chuck","salt"],
       allergen: [{ allergenImage: "/images/image1.png", tooltip: "Gluten" }]
     },
   ])
@@ -133,7 +137,6 @@ function App() {
   return (
     <section id="app">
       <div className="container-fluid">
-      {console.log("outside: " + selectedAllergens)}
         <Row>
           <LogoTitle restaurants={restaurants} selectRestaurant={selectRestaurant} />
         </Row>
