@@ -87,7 +87,6 @@ function App() {
   const selectRestaurant = id => {setSelectedRestaurant(id); setSelectedMenuCategory("");}
   const selectSubMenu = sub => {setSelectedMenuCategory(sub);}
 
-
   useEffect(() => {
     let selectedMenu = cardInfo;
     //if a restaurant has been selected, filter the cards by the restid
