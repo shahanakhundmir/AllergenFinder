@@ -63,13 +63,13 @@ function App() {
   ])
 
   const [allergens, setAllergens] = useState([
-    { allergenid: '001', allergenname: 'Gluten', image: '/images/image1.png', },
-    { allergenid: '002', allergenname: 'Celery', image: '/images/image2.png' },
-    { allergenid: '003', allergenname: 'Treenuts', image: '/images/image3.png', },
-    { allergenid: '004', allergenname: 'Fish', image: '/images/image4.png' },
-    { allergenid: '005', allergenname: 'Soy', image: '/images/image5.png', },
-    { allergenid: '006', allergenname: 'Sesame', image: '/images/image6.png' },
-    { allergenid: '007', allergenname: 'Peanuts', image: '/images/image7.png', },
+    { allergenid: '001', allergenname: 'Gluten', image: '/images/image1a.png', },
+    { allergenid: '002', allergenname: 'Celery', image: '/images/image2a.png' },
+    { allergenid: '003', allergenname: 'Treenuts', image: '/images/image3a.png', },
+    { allergenid: '004', allergenname: 'Fish', image: '/images/image4a.png' },
+    { allergenid: '005', allergenname: 'Soy', image: '/images/image5a.png', },
+    { allergenid: '006', allergenname: 'Sesame', image: '/images/image6a.png' },
+    { allergenid: '007', allergenname: 'Peanuts', image: '/images/image7a.png', },
     { allergenid: '008', allergenname: 'Crustaceans', image: '/images/image8.png' },
     { allergenid: '009', allergenname: 'Eggs', image: '/images/image9.png', },
     { allergenid: '010', allergenname: 'Molluscs', image: '/images/image10.png' },

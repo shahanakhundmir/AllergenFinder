@@ -20,9 +20,10 @@
 }
 
 .allergen-icon{
-    height: 2.4rem;
-    width: 2.4rem;
-    margin: 1.28rem;
+    height: 2.8rem;
+    width: 2.8rem;
+    margin: 1.2rem;
+    margin-top: 0.8rem;
 }
 
 .allergen-icon:hover {
