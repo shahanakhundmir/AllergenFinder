@@ -15,27 +15,19 @@
 .footer-brand{
     margin:0;
     padding:0;
+    display: flex;
+    overflow-x: auto;
 }
 
 .allergen-icon{
-    height: 2.4rem;
-    width: 2.4rem;
-    margin: 1.28rem;
+    height: 2.8rem;
+    width: 2.8rem;
+    margin: 1.2rem;
+    margin-top: 0.8rem;
 }
+
 .allergen-icon:hover {
     transform: scale(1.30);
-}
-
-@media only screen and (max-width: 800px)  {
-    .allergen-icon {
-        height:1.2rem;
-        width:1.2rem;
-        margin:0;
-    }
-
-    .allergen-icon:hover {
-        transform: scale(1.30);
-    }
 }
 
 
