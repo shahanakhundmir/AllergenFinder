@@ -1,10 +1,14 @@
 .Modal{
-    padding-top: 200px;
+    padding-top: 110px;
+    overflow: hidden;
+    border-radius: 20px !important;
+    
 }
 
 .Modal-image{
     width: 90%;
     height: 120px;
+  
     object-fit: contain;
 }
 .Modal-ingredients{
