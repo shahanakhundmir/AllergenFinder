@@ -10,7 +10,7 @@ function NavbarMenu({selectSubMenu}) {
    
     return (
         <div>
-            <Navbar className="menu" expand="md" fixed="top" >
+            <Navbar collapseOnSelect className="menu" expand="md" fixed="top" >
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse className="navbar-collapse">
                     <Nav className="mr-auto">
@@ -21,12 +21,16 @@ function NavbarMenu({selectSubMenu}) {
                         <Nav.Link onClick={()=>selectSubMenu('dessert')}className="menu-item" href="#desserts">Desserts</Nav.Link>
                         <Nav.Link onClick={()=>selectSubMenu('drinks')}className="menu-item" href="#drinks">Drinks</Nav.Link>
                     </Nav>
-                    <Form inline className="container-fluid">
-                        <Button className="restaurant-info" >Restaurant Information</Button>
-                    </Form>
                 </Navbar.Collapse>
             </Navbar>
         </div>
     )
 }
 export default NavbarMenu;
+
+/**
+ * 
+ * <Form inline className="container-fluid">
+                        <Button className="restaurant-info" >Restaurant Information</Button>
+                    </Form>
+ */

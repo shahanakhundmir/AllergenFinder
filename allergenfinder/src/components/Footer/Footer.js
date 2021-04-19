@@ -17,15 +17,14 @@ function Footer({ allergens, selectAllergen }) {
             <Navbar fixed="bottom" className="footer">
                 <Navbar.Brand className="footer-brand" href="#home">
                         {allergens.map(allergen => 
-                       <OverlayTrigger
-                            overlay={<Tooltip id="tooltip-top" effect="solid">{allergen.allergenname}</Tooltip>}>
+                      
                             <img onClick={() => selectAllergen(allergen.allergenname)} 
                             key={allergen.allergenid} 
                             className="allergen-icon" 
                             src={allergen.image} 
                             alt=""
                             />
-                        </OverlayTrigger>)}
+                       )}
                 </Navbar.Brand>
             </Navbar>
         </div >
