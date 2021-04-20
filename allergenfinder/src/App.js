@@ -9,9 +9,11 @@ import Container from 'react-bootstrap/Container';
 import MenuList from './components/MenuList/MenuList';
 import "./App.css";
 
+import axios from 'axios';
+
 function App() {
 
-  const [cardInfo, setCardInfo] = useState([
+ /**const [cardInfo, setCardInfo] = useState([
     //Menu items for Nandos Restaurant options: main and starter
     {
       restid: "001", restname: "Nandos", id: "001", submenu: 'main', title: "Nandos Main-Halloumi Sticks & Dip", description: "Five chunky sticks of grilled halloumi with chilli jam for dipping...", image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/26/13/halloumisticks.jpg?width=990&auto=webp&quality=75",
@@ -55,14 +57,14 @@ function App() {
       ingredients:["ground chuck","salt"],
       allergen: [{ allergenImage: "/images/image1.png", tooltip: "Gluten" }]
     },
-  ])
+  ]) */ 
   
-  const [restaurants, setRestaurant] = useState([
+  /** const [restaurants, setRestaurant] = useState([
     { restid: '001', restname: 'Nandos', branchname: 'London, Wembley', },
     { restid: '002', restname: 'Bills', branchname: 'Swindon' }
-  ])
+  ])*/
 
-  const [allergens, setAllergens] = useState([
+  /*const [allergens, setAllergens] = useState([
     { allergenid: '001', allergenname: 'Gluten', image: '/images/image1a.png', },
     { allergenid: '002', allergenname: 'Celery', image: '/images/image2a.png' },
     { allergenid: '003', allergenname: 'Treenuts', image: '/images/image3a.png', },
@@ -77,7 +79,12 @@ function App() {
     { allergenid: '012', allergenname: 'Mustard', image: '/images/image12a.png' },
     { allergenid: '013', allergenname: 'Sulphur Dioxide Sulphites', image: '/images/image13a.png' },
     { allergenid: '014', allergenname: 'Lupin', image: '/images/image14a.png' }
-  ])
+  ])*/
+  const [restaurants, setRestaurant] = useState([]);
+  const [cardInfo, setCardInfo] = useState([]);
+  const [allergens, setAllergens] = useState([]);
+  const [menuItemAllergens, setMenuItemAllergens] = useState([]);
+
 
   const [selectedAllergens, setSeletedAllergens] = useState([])
   const [selectedMenu, setSelectedMenu] = useState(cardInfo)
@@ -87,15 +94,41 @@ function App() {
   const selectRestaurant = id => {setSelectedRestaurant(id); setSelectedMenuCategory("");}
   const selectSubMenu = sub => {setSelectedMenuCategory(sub);}
 
+  
+
   useEffect(() => {
+    axios.get('https://u6mq1fk1jg.execute-api.eu-west-2.amazonaws.com/dev/restaurants')
+      .then(response => setRestaurant(response.data),
+      )
+      .catch(error => console.log(error))
+
+      axios.get('https://u6mq1fk1jg.execute-api.eu-west-2.amazonaws.com/dev/menuitems')
+      .then(response => setCardInfo(response.data),
+      )
+      .catch(error => console.log(error))
+
+      axios.get('https://u6mq1fk1jg.execute-api.eu-west-2.amazonaws.com/dev/allergens')
+      .then(response => setAllergens(response.data),
+      )
+      .catch(error => console.log(error))
+
+      axios.get(' https://u6mq1fk1jg.execute-api.eu-west-2.amazonaws.com/dev/menuallergens')
+      .then(response => setMenuItemAllergens(response.data),
+      )
+      .catch(error => console.log(error))
+  }, [])
+ 
+  
+  useEffect(() => {
+
     let selectedMenu = cardInfo;
     //if a restaurant has been selected, filter the cards by the restid
     if (selectedRestaurant !== "" ) {
-      selectedMenu = selectedMenu.filter(card => card.restid === selectedRestaurant)
+      selectedMenu = selectedMenu.filter(card => card.rest_id === selectedRestaurant)
     }
     //if a menu category has been selected, filter the cards by the submenu
     if (selectedMenuCategory !== "" || undefined) {
-      selectedMenu = selectedMenu.filter(card => card.submenu === selectedMenuCategory)
+      selectedMenu = selectedMenu.filter(card => card.sub_menu === selectedMenuCategory )
     }
     //set the selected menu to decide what cards will be shown
     setSelectedMenu(selectedMenu)
@@ -121,7 +154,7 @@ function App() {
         <Row>
           <Col>
             <Container className="menu-container">
-                <MenuList selectedMenu={selectedMenu} selectedAllergens = {selectedAllergens} />
+                <MenuList menuItemAllergens = {menuItemAllergens} allergens = {allergens} selectedMenu={selectedMenu} selectedAllergens = {selectedAllergens} />
             </Container>
           </Col>
         </Row>
