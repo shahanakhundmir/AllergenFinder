@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Card from 'react-bootstrap/Card'
+//import Card from 'react-bootstrap/Card'
 //import Badge from 'react-bootstrap/Badge'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
@@ -15,8 +15,6 @@ function MenuCard(props) {
     const allergens = props.allergens.filter(allergen =>
                         composite.some(menuallergen => menuallergen.allergen_id === allergen.allergen_id))
     
-    console.log(allergens)
-    
     const [show, setShow] = useState(false)
 
     const onCardClick = () => {
@@ -28,15 +26,15 @@ function MenuCard(props) {
     }
 
     const renderAllergen = allergens.map((d) =>
-        <OverlayTrigger overlay={<Tooltip id='tooltip-top'>{d.allergen_name}</Tooltip>}>
+        
             <img className="allergen-img" src={d.allergen_image} alt="" style={{}} ></img>
-        </OverlayTrigger>)
+        )
 
     return (
         <div onClick={onCardClick} className={`menu-card ${Object.values(allergens).map(allergen =>
             allergen.allergen_name).filter(allergen => selectedAllergens.includes(allergen)).length !== 0 ? 'allergy' : ''}`}>
             <Row>
-                <Col xs={12} sm={4} md={4} lg={4} className="d-flex align-items-center justify-content-center" style={{}}>
+                <Col xs={12} sm={4} md={4} lg={4} className="d-flex align-items-center justify-content-center">
                     <img className="card-image" src={props.card.image} alt="foodimg" />
                 </Col>
                 <Col>
