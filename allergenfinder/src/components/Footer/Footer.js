@@ -18,10 +18,10 @@ function Footer({ allergens, selectAllergen }) {
                 <Navbar.Brand className="footer-brand" href="#home">
                         {allergens.map(allergen => 
                       
-                            <img onClick={() => selectAllergen(allergen.allergenname)} 
-                            key={allergen.allergenid} 
+                            <img onClick={() => selectAllergen(allergen.allergen_name)} 
+                            key={allergen.allergen_id} 
                             className="allergen-icon" 
-                            src={allergen.image} 
+                            src={allergen.allergen_image} 
                             alt=""
                             />
                        )}
