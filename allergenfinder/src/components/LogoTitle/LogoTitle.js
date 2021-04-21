@@ -16,9 +16,9 @@ function LogoTitle({restaurants, selectRestaurant}) {
         <Form inline className="ml-auto"  >
           <NavDropdown title="Restaurant Name" id="dropdown-title" className="rest-dropdown">
           {restaurants.map(restaurant => <NavDropdown.Item  className="rest-name" 
-          onClick={()=>selectRestaurant(restaurant.restid)  } // NavDropdown.title = restaurant.name
-          key={restaurant.restid} 
-          href="#action/3.3">{restaurant.restname}
+          onClick={()=>selectRestaurant(restaurant.rest_id)  } // NavDropdown.title = restaurant.name
+          key={restaurant.rest_id} 
+          href="#action/3.3">{restaurant.rest_name}
           </NavDropdown.Item>)}
 
           </NavDropdown>

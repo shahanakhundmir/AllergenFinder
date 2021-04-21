@@ -9,9 +9,11 @@ import Container from 'react-bootstrap/Container';
 import MenuList from './components/MenuList/MenuList';
 import "./App.css";
 
+import axios from 'axios';
+
 function App() {
 
-  const [cardInfo, setCardInfo] = useState([
+ /**const [cardInfo, setCardInfo] = useState([
     //Menu items for Nandos Restaurant options: main and starter
     {
       restid: "001", restname: "Nandos", id: "001", submenu: 'main', title: "Nandos Main-Halloumi Sticks & Dip", description: "Five chunky sticks of grilled halloumi with chilli jam for dipping...", image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/26/13/halloumisticks.jpg?width=990&auto=webp&quality=75",
@@ -55,14 +57,14 @@ function App() {
       ingredients:["ground chuck","salt"],
       allergen: [{ allergenImage: "/images/image1.png", tooltip: "Gluten" }]
     },
-  ])
+  ]) */ 
   
-  const [restaurants, setRestaurant] = useState([
+  /** const [restaurants, setRestaurant] = useState([
     { restid: '001', restname: 'Nandos', branchname: 'London, Wembley', },
     { restid: '002', restname: 'Bills', branchname: 'Swindon' }
-  ])
+  ])*/
 
-  const [allergens, setAllergens] = useState([
+  /*const [allergens, setAllergens] = useState([
     { allergenid: '001', allergenname: 'Gluten', image: '/images/image1a.png', },
     { allergenid: '002', allergenname: 'Celery', image: '/images/image2a.png' },
     { allergenid: '003', allergenname: 'Treenuts', image: '/images/image3a.png', },
@@ -70,43 +72,70 @@ function App() {
     { allergenid: '005', allergenname: 'Soy', image: '/images/image5a.png', },
     { allergenid: '006', allergenname: 'Sesame', image: '/images/image6a.png' },
     { allergenid: '007', allergenname: 'Peanuts', image: '/images/image7a.png', },
-    { allergenid: '008', allergenname: 'Crustaceans', image: '/images/image8.png' },
-    { allergenid: '009', allergenname: 'Eggs', image: '/images/image9.png', },
-    { allergenid: '010', allergenname: 'Molluscs', image: '/images/image10.png' },
-    { allergenid: '011', allergenname: 'Milk', image: '/images/image11.png', },
-    { allergenid: '012', allergenname: 'Mustard', image: '/images/image12.png' },
-    { allergenid: '013', allergenname: 'Sulphur Dioxide Sulphites', image: '/images/image13.png' },
-    { allergenid: '014', allergenname: 'Lupin', image: '/images/image14.png' }
-  ])
+    { allergenid: '008', allergenname: 'Crustaceans', image: '/images/image8a.png' },
+    { allergenid: '009', allergenname: 'Eggs', image: '/images/image9a.png', },
+    { allergenid: '010', allergenname: 'Molluscs', image: '/images/image10a.png' },
+    { allergenid: '011', allergenname: 'Milk', image: '/images/image11a.png', },
+    { allergenid: '012', allergenname: 'Mustard', image: '/images/image12a.png' },
+    { allergenid: '013', allergenname: 'Sulphur Dioxide Sulphites', image: '/images/image13a.png' },
+    { allergenid: '014', allergenname: 'Lupin', image: '/images/image14a.png' }
+  ])*/
+  const [restaurants, setRestaurant] = useState([]);
+  const [cardInfo, setCardInfo] = useState([]);
+  const [allergens, setAllergens] = useState([]);
+  const [menuItemAllergens, setMenuItemAllergens] = useState([]);
+
 
   const [selectedAllergens, setSeletedAllergens] = useState([])
   const [selectedMenu, setSelectedMenu] = useState(cardInfo)
 
   const [selectedRestaurant, setSelectedRestaurant ]= useState("");
   const [selectedMenuCategory, setSelectedMenuCategory ]= useState("");
-  const selectRestaurant = id => {setSelectedRestaurant(id);}
+  const selectRestaurant = id => {setSelectedRestaurant(id); setSelectedMenuCategory("");}
   const selectSubMenu = sub => {setSelectedMenuCategory(sub);}
 
-  useEffect(() => {
-    const selectedMenu = cardInfo.filter(card => {
-      return selectedRestaurant === "" || card.restid === selectedRestaurant });  
-    setSelectedMenu(selectedMenu)}, [selectedRestaurant, cardInfo])
-    
-/*
-  useEffect(() => {
-    const selectedMenu = cardInfo.filter(card => {
-      return selectedMenuCategory === "" || card.submenu === selectedMenuCategory & card.restid === selectedRestaurant});  
-    setSelectedMenu(selectedMenu)}, [selectedRestaurant, selectedMenuCategory, cardInfo])
-*/
-
-   /** const selectSubMenu = sub => {
-      console.log(sub)
-      console.log('submenu')
-      const filteredSubMenu = selectedMenu.filter(menuItem => menuItem.submenu === sub)
-      setSelectedMenu(filteredSubMenu)
-    }*/
   
-  // filters menu items by sub menu  selectSubMenu
+
+  useEffect(() => {
+    axios.get('https://u6mq1fk1jg.execute-api.eu-west-2.amazonaws.com/dev/restaurants')
+      .then(response => setRestaurant(response.data),
+      )
+      .catch(error => console.log(error))
+
+      axios.get('https://u6mq1fk1jg.execute-api.eu-west-2.amazonaws.com/dev/menuitems')
+      .then(response => setCardInfo(response.data),
+      )
+      .catch(error => console.log(error))
+
+      axios.get('https://u6mq1fk1jg.execute-api.eu-west-2.amazonaws.com/dev/allergens')
+      .then(response => setAllergens(response.data),
+      )
+      .catch(error => console.log(error))
+
+      axios.get(' https://u6mq1fk1jg.execute-api.eu-west-2.amazonaws.com/dev/menuallergens')
+      .then(response => setMenuItemAllergens(response.data),
+      )
+      .catch(error => console.log(error))
+  }, [])
+ 
+  
+  useEffect(() => {
+
+    let selectedMenu = cardInfo;
+    //if a restaurant has been selected, filter the cards by the restid
+    if (selectedRestaurant !== "" ) {
+      selectedMenu = selectedMenu.filter(card => card.rest_id === selectedRestaurant)
+    }
+    //if a menu category has been selected, filter the cards by the submenu
+    if (selectedMenuCategory !== "" || undefined) {
+      selectedMenu = selectedMenu.filter(card => card.sub_menu === selectedMenuCategory )
+    }
+    //set the selected menu to decide what cards will be shown
+    setSelectedMenu(selectedMenu)
+    //run this function everytime the cards, selected restaurant or menu category is changed
+  }, [selectedRestaurant, cardInfo, selectedMenuCategory])
+
+  // Allergen selection
   const selectAllergen = allergen =>{
     // if clicked allergen isn't in the list add it else remove it
     setSeletedAllergens(selectedAllergens => selectedAllergens.indexOf(allergen)=== -1 ? [...selectedAllergens, allergen]:
@@ -125,7 +154,7 @@ function App() {
         <Row>
           <Col>
             <Container className="menu-container">
-                <MenuList selectedMenu={selectedMenu} selectedAllergens = {selectedAllergens} />
+                <MenuList menuItemAllergens = {menuItemAllergens} allergens = {allergens} selectedMenu={selectedMenu} selectedAllergens = {selectedAllergens} />
             </Container>
           </Col>
         </Row>
@@ -150,3 +179,39 @@ export default App;
     console.log('refreshed')
     console.log(selectedMenu)
   }*/
+
+  /*
+  useEffect(() => {
+    const selectedMenu = cardInfo.filter(card => {
+      return selectedMenuCategory === "" || card.submenu === selectedMenuCategory & card.restid === selectedRestaurant});  
+    setSelectedMenu(selectedMenu)}, [selectedRestaurant, selectedMenuCategory, cardInfo])
+*/
+
+   /** const selectSubMenu = sub => {
+      console.log(sub)
+      console.log('submenu')
+      const filteredSubMenu = selectedMenu.filter(menuItem => menuItem.submenu === sub)
+      setSelectedMenu(filteredSubMenu)
+    }*/
+
+     /**useEffect(() => {
+    const selectedMenu = cardInfo.filter(card => {
+      return selectedRestaurant === "" || card.restid === selectedRestaurant });  
+    setSelectedMenu(selectedMenu)}, [selectedRestaurant, cardInfo])
+  
+     * useEffect(() => {
+      let selectedMenu = cardInfo;
+      //if a restaurant has been selected, filter the cards by the restid
+      if (selectedRestaurant !== "" ) {
+        selectedMenu = selectedMenu.filter(card => card.restid === selectedRestaurant)
+      }
+      //if a menu category has been selected, filter the cards by the submenu
+      if (selectedMenuCategory !== "" || undefined) {
+        selectedMenu = selectedMenu.filter(card => card.submenu === selectedMenuCategory)
+      }
+      //set the selected menu to decide what cards will be shown
+      setSelectedMenu(selectedMenu)
+      //run this function everytime the cards, selected restaurant or menu category is changed
+    }, [selectedRestaurant, cardInfo, selectedMenuCategory])
+     * 
+     */
