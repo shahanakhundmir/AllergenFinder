@@ -146,7 +146,7 @@ function App() {
     <section id="app">
       <div className="container-fluid">
         <Row>
-          <LogoTitle restaurants={restaurants} selectRestaurant={selectRestaurant} />
+          <LogoTitle restaurants={restaurants} selectRestaurant={selectRestaurant} selectedRestaurant={selectedRestaurant} />
         </Row>
         <Row>
           <NavbarMenu selectSubMenu={selectSubMenu} />

@@ -5,8 +5,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
 import "./LogoTitle.css";
 
-function LogoTitle({restaurants, selectRestaurant}) {
-
+function LogoTitle({restaurants, selectRestaurant, selectedRestaurant}) {
+let y = ""
+  const x = restaurants.filter(restaurant => restaurant.rest_id === selectedRestaurant).map(a => a.rest_name);
+  console.log('name ' + (x))
   
   return (
     <div>
@@ -14,7 +16,9 @@ function LogoTitle({restaurants, selectRestaurant}) {
         <Navbar.Brand className='nav-font'>
           <img className="header-logo" alt="logo" src="/images/crab.png" />{' '}Allergen Finder</Navbar.Brand>
         <Form inline className="ml-auto"  >
-          <NavDropdown title="Restaurant Name" id="dropdown-title" className="rest-dropdown">
+          <NavDropdown title={`${ selectedRestaurant === "" ? 'Restaurant Name' : restaurants.filter(restaurant => 
+                                restaurant.rest_id === selectedRestaurant).map(a => a.rest_name)}`} 
+                                id="dropdown-title" className="rest-dropdown">
           {restaurants.map(restaurant => <NavDropdown.Item  className="rest-name" 
           onClick={()=>selectRestaurant(restaurant.rest_id)  } // NavDropdown.title = restaurant.name
           key={restaurant.rest_id} 
