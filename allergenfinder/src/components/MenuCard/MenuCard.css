@@ -1,6 +1,5 @@
 .menu-card{
-   /* max-width: 500px;*/
-width:500px;
+    max-width: 500px;
     cursor: pointer;
     border: 3px solid #EECA60;
     border-radius: 20px;
@@ -21,8 +20,7 @@ width:500px;
   }
 
 .card-image{
-    max-height: 100px;
-    max-width: 150px;
+    max-height: 94px;
     border-radius: 20px;
     object-fit: cover;
 }

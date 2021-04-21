@@ -20,6 +20,7 @@ function AppModal({ menu, show, image, id, title, description, ingredients, alle
                         <p key={index}>{item}</p>
                     )}</p>
                     <p className ="title-font">Contamination Info</p>
+                
                     <p className="Modal-contamination text-font" >
                         {factoryContan}</p>  
                     <div>{allergen}</div>
