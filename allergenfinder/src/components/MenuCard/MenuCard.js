@@ -68,6 +68,7 @@ function MenuCard(props) {
                         description={props.card.full_desc}
                         ingredients={props.card.ingredients}
                         allergen={renderAllergen}
+                        factoryContan={props.card.factoryContan}
                         onClose={handleClose}> {console.log(show)}</AppModal>
                     : null
                 }
