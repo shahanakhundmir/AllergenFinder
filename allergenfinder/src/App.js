@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MenuCard from "./components/MenuCard/MenuCard";
 import NavbarMenu from "./components/NavbarMenu/NavbarMenu";
@@ -8,6 +8,8 @@ import { Row, Col } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import MenuList from './components/MenuList/MenuList';
 import "./App.css";
+//import React, { Component } from 'react';
+import Callout from 'react-callout-component';
 
 import axios from 'axios';
 
@@ -159,6 +161,8 @@ function App() {
           </Col>
         </Row>
         <Row>
+        
+         
           <Footer allergens = {allergens} selectAllergen={selectAllergen}/>
         </Row>
       </div>
