@@ -10,7 +10,7 @@ function NavbarMenu({selectSubMenu}) {
    
     return (
         <div>
-            <Navbar collapseOnSelect className="menu" expand="md" fixed="top" >
+            <Navbar collapseOnSelect className="menu" expand="lg" fixed="top" >
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse className="navbar-collapse">
                     <Nav className="mr-auto">

@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import "./AppModal.css"
 
-function AppModal({ menu, show, image, id, title, description, ingredients, allergen, onClose }) {
+function AppModal({ menu, show, image, id, title, description, ingredients, allergen,factoryContan, onClose }) {
     //console.log({ id })
     const status = show
     const handleClose = () => onClose();
     const handleShow = () => show.setShow(true)
-
+    ingredients=ingredients.split(",")
     return (
         <div>
             <Modal className="Modal" show={status} onClose={handleClose} >
@@ -19,6 +19,9 @@ function AppModal({ menu, show, image, id, title, description, ingredients, alle
                     <p className="Modal-ingredients text-font" >{ingredients.map((item, index) =>
                         <p key={index}>{item}</p>
                     )}</p>
+                    <p className ="title-font">Contamination Info</p>
+                    <p className="Modal-contamination text-font" >
+                        {factoryContan}</p>  
                     <div>{allergen}</div>
                 </Modal.Body>
                 <Modal.Footer>
