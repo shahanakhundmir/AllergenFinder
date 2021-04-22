@@ -159,7 +159,7 @@ function App() {
           </Col>
         </Row>
         <Row>
-          <Footer allergens = {allergens} selectAllergen={selectAllergen}/>
+          <Footer allergens = {allergens} selectAllergen={selectAllergen} selectedAllergens={selectedAllergens}/>
         </Row>
       </div>
     </section >

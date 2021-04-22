@@ -30,4 +30,9 @@
     transform: scale(1.30);
 }
 
+.allergen-selected{
+    background-color: blue;
+    transform: scale(1.30);
+
+}
 

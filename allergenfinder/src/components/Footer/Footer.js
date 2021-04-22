@@ -10,8 +10,7 @@ import { ReactSmartScroller } from 'react-smart-scroller'
 import "./Footer.css";
 
 
-
-function Footer({ allergens, selectAllergen }) {
+function Footer({ allergens, selectAllergen, selectedAllergens}) {
     return (
         <div className="div-footer">
             <Navbar fixed="bottom" className="footer">
@@ -20,7 +19,7 @@ function Footer({ allergens, selectAllergen }) {
                       
                             <img onClick={() => selectAllergen(allergen.allergen_name)} 
                             key={allergen.allergen_id} 
-                            className="allergen-icon" 
+                            className={`allergen-icon ${(selectedAllergens.filter(a => a === allergen.allergen_name)).length !== 0  ? 'allergen-selected' : ''}`}
                             src={allergen.allergen_image} 
                             alt=""
                             />
