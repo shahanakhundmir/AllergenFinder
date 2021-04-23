@@ -27,11 +27,12 @@
 
 .card-title{
     font-family:NewTegomin-Regular ;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .card-text{ 
     font-size: 1rem;
+
     font-family: PTSans-Regular;   
 }
 
@@ -39,6 +40,7 @@
     font-size: 1rem;
     font-family: PTSans-Regular;  
     color:#EECA60; 
+
 }
 
 .card-footer{
@@ -68,6 +70,9 @@
         padding: 0rem;
         font-family: PTSans-Regular;
         padding-left:5px;
+    }
+    .menu-card{
+        max-width: 360px;
     }
 }
 

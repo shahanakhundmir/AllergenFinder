@@ -1,5 +1,5 @@
 .footer{
-    height: 60px;
+    height: 90px;
     width:100%;
     padding-left:8px;
     padding-right:8px;
@@ -8,8 +8,8 @@
     justify-content: center;
 }
 
-.div-footer{
-    margin-top: 70px;
+.allergen-row{
+    margin-top:10px;
 }
 
 .footer-brand{
@@ -22,12 +22,23 @@
 .allergen-icon{
     height: 2.8rem;
     width: 2.8rem;
-    margin: 1.2rem;
-    margin-top: 1.2rem;
+    margin: 0.3rem; 
 }
 
 .allergen-icon:hover {
     transform: scale(1.30);
 }
 
+.allergen-selected{
+    transform: scale(1.30);
+}
+
+.allergen-text{
+    font-size: 0.9rem;
+    font-family: PTSans-Regular;
+    text-overflow: ellipsis;
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+}
 
