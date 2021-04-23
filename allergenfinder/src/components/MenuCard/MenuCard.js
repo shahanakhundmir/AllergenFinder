@@ -14,7 +14,7 @@ function MenuCard(props) {
     const composite = props.menuItemAllergens.filter(menuallergen => menuallergen.item_id === props.card.item_id)
     const allergens = props.allergens.filter(allergen =>
                         composite.some(menuallergen => menuallergen.allergen_id === allergen.allergen_id))
-    
+    console.log(props.card.factory_contam)
     const [show, setShow] = useState(false)
 
     const onCardClick = () => {
@@ -68,7 +68,8 @@ function MenuCard(props) {
                         description={props.card.full_desc}
                         ingredients={props.card.ingredients}
                         allergen={renderAllergen}
-                        factoryContan={props.card.factoryContan}
+                        factory_contam={props.card.factory_contam}
+                        kitchen_contam={props.card.kitchen_contam}
                         onClose={handleClose}> {console.log(show)}</AppModal>
                     : null
                 }

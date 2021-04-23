@@ -1,8 +1,7 @@
 .Modal{
     padding-top: 110px;
     overflow: hidden;
-    border-radius: 20px !important;
-    
+    border-radius: 20px !important; 
 }
 
 .Modal-image{
@@ -15,13 +14,13 @@
     Line-Height:0.2px
 }
 .title-font{
+    color:#EECA60;
     font-family:NewTegomin-Regular ;
     font-size: 1.5rem;
 }
 
 .text-font{ 
     font-size: 1rem;
+    
     font-family: PTSans-Regular; 
 }
-
-
