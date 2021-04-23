@@ -20,8 +20,9 @@
 
 .card-image{
     max-height: 94px;
+  width: 150px;/* added line*/
     border-radius: 20px;
-    object-fit: cover;
+    object-fit: contain;/* added line*/
 }
 
 .card-title{
@@ -31,8 +32,13 @@
 
 .card-text{ 
     font-size: 1rem;
-    font-family: PTSans-Regular;
-    
+    font-family: PTSans-Regular;   
+}
+
+.card-text:hover{ 
+    font-size: 1rem;
+    font-family: PTSans-Regular;  
+    color:#EECA60; 
 }
 
 .card-footer{
