@@ -31,7 +31,7 @@ function MenuCard(props) {
         )
 
     return (
-        <div onClick={onCardClick} className={`menu-card ${Object.values(allergens).map(allergen =>
+        <div onClick={onCardClick} className={`menu-card ${allergens.map(allergen =>
             allergen.allergen_name).filter(allergen => selectedAllergens.includes(allergen)).length !== 0 ? 'allergy' : ''}`}>
             <Row>
                 <Col xs={12} sm={4} md={4} lg={4} className="d-flex align-items-center justify-content-center">

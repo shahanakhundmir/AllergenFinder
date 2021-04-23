@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MenuCard from "./components/MenuCard/MenuCard";
 import NavbarMenu from "./components/NavbarMenu/NavbarMenu";
@@ -8,6 +8,8 @@ import { Row, Col } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import MenuList from './components/MenuList/MenuList';
 import "./App.css";
+//import React, { Component } from 'react';
+import Callout from 'react-callout-component';
 
 import axios from 'axios';
 
@@ -85,7 +87,6 @@ function App() {
   const [allergens, setAllergens] = useState([]);
   const [menuItemAllergens, setMenuItemAllergens] = useState([]);
 
-
   const [selectedAllergens, setSeletedAllergens] = useState([])
   const [selectedMenu, setSelectedMenu] = useState(cardInfo)
 
@@ -93,8 +94,6 @@ function App() {
   const [selectedMenuCategory, setSelectedMenuCategory ]= useState("");
   const selectRestaurant = id => {setSelectedRestaurant(id); setSelectedMenuCategory("");}
   const selectSubMenu = sub => {setSelectedMenuCategory(sub);}
-
-  
 
   useEffect(() => {
     axios.get('https://u6mq1fk1jg.execute-api.eu-west-2.amazonaws.com/dev/restaurants')
@@ -118,27 +117,21 @@ function App() {
       .catch(error => console.log(error))
   }, [])
  
-  
   useEffect(() => {
 
     let selectedMenu = cardInfo;
-    //if a restaurant has been selected, filter the cards by the restid
+   
     if (selectedRestaurant !== "" ) {
       selectedMenu = selectedMenu.filter(card => card.rest_id === selectedRestaurant)
     }
-    //if a menu category has been selected, filter the cards by the submenu
     if (selectedMenuCategory !== "" || undefined) {
       selectedMenu = selectedMenu.filter(card => card.sub_menu === selectedMenuCategory )
     }
-    //set the selected menu to decide what cards will be shown
     setSelectedMenu(selectedMenu)
-    //run this function everytime the cards, selected restaurant or menu category is changed
-  }, [selectedRestaurant, cardInfo, selectedMenuCategory])
+    }, [selectedRestaurant, cardInfo, selectedMenuCategory])
 
-  // Allergen selection
-  const selectAllergen = allergen =>{
-    // if clicked allergen isn't in the list add it else remove it
-    setSeletedAllergens(selectedAllergens => selectedAllergens.indexOf(allergen)=== -1 ? [...selectedAllergens, allergen]:
+    const selectAllergen = allergen =>{
+      setSeletedAllergens(selectedAllergens => selectedAllergens.indexOf(allergen)=== -1 ? [...selectedAllergens, allergen]:
                         selectedAllergens.filter((_, i) => i !== selectedAllergens.indexOf(allergen))
                         )}
 
@@ -167,51 +160,3 @@ function App() {
 }
 export default App;
 
-/**  filters menu items by restaurant
-  const selectRestaurant = id => {
-    refreshMenu();
-    const filteredMenu = selectedMenu.filter(menuItem => menuItem.restid === id)
-    setSelectedMenu(filteredMenu)
-  }
-  // refreshes to full menu before filtering 
-  const refreshMenu = () => {
-    setSelectedMenu(cardInfo)
-    console.log('refreshed')
-    console.log(selectedMenu)
-  }*/
-
-  /*
-  useEffect(() => {
-    const selectedMenu = cardInfo.filter(card => {
-      return selectedMenuCategory === "" || card.submenu === selectedMenuCategory & card.restid === selectedRestaurant});  
-    setSelectedMenu(selectedMenu)}, [selectedRestaurant, selectedMenuCategory, cardInfo])
-*/
-
-   /** const selectSubMenu = sub => {
-      console.log(sub)
-      console.log('submenu')
-      const filteredSubMenu = selectedMenu.filter(menuItem => menuItem.submenu === sub)
-      setSelectedMenu(filteredSubMenu)
-    }*/
-
-     /**useEffect(() => {
-    const selectedMenu = cardInfo.filter(card => {
-      return selectedRestaurant === "" || card.restid === selectedRestaurant });  
-    setSelectedMenu(selectedMenu)}, [selectedRestaurant, cardInfo])
-  
-     * useEffect(() => {
-      let selectedMenu = cardInfo;
-      //if a restaurant has been selected, filter the cards by the restid
-      if (selectedRestaurant !== "" ) {
-        selectedMenu = selectedMenu.filter(card => card.restid === selectedRestaurant)
-      }
-      //if a menu category has been selected, filter the cards by the submenu
-      if (selectedMenuCategory !== "" || undefined) {
-        selectedMenu = selectedMenu.filter(card => card.submenu === selectedMenuCategory)
-      }
-      //set the selected menu to decide what cards will be shown
-      setSelectedMenu(selectedMenu)
-      //run this function everytime the cards, selected restaurant or menu category is changed
-    }, [selectedRestaurant, cardInfo, selectedMenuCategory])
-     * 
-     */
