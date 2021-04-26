@@ -11,8 +11,8 @@ function Footer({ allergens, selectAllergen, selectedAllergens }) {
             <Navbar fixed="bottom" className="footer">
                 <Navbar.Brand className="footer-brand" href="#footer">
                     {allergens.map((allergen, index) =>
-                        <Row className="allergen-row" index={index}>
-                            <Col className="d-flex justify-content-center" index={index}>
+                        <Row className="allergen-row" key={index}>
+                            <Col className="d-flex justify-content-center" >
                                 <img onClick={() => selectAllergen(allergen.allergen_name)}
                                     key={allergen.allergen_id}
                                     className={`allergen-icon ${(selectedAllergens.filter(a => a === allergen.allergen_name)).length !== 0 ? 'allergen-selected' : ''}`}

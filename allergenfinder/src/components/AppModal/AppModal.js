@@ -26,7 +26,7 @@ function AppModal({
     <div>
       <Modal className="Modal" show={status} onClose={handleClose}>
         <Modal.Body>
-          <img className="Modal-image" alt="Pop-up" src={image} />
+          <img className="Modal-image" alt="menu item" src={image} />
           <Modal.Title className="title-font">{title}</Modal.Title>
           <p className="modal-description text-font">{description}</p>
           <p className="title-font">Ingredients</p>

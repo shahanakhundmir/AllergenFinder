@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event'
 import Footer from './Footer'
 
 describe('Footer', () => {
+    afterEach(() => jest.clearAllMocks())
     test(`Given the required props, when the footer is rendered, 
         allergen icons and labels should be visable`, () => {
 

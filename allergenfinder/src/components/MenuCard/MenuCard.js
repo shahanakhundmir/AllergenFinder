@@ -26,16 +26,14 @@ function MenuCard(props) {
     }
 
     const renderAllergen = allergens.map((d) =>
-        
-            <img className="allergen-img" src={d.allergen_image} alt="" style={{}} ></img>
-        )
+        <img className="allergen-img" src={d.allergen_image} alt="alergen icon"></img>)
 
     return (
         <div onClick={onCardClick} className={`menu-card ${allergens.map(allergen =>
             allergen.allergen_name).filter(allergen => selectedAllergens.includes(allergen)).length !== 0 ? 'allergy' : ''}`}>
             <Row>
                 <Col xs={12} sm={4} md={4} lg={4} className="d-flex align-items-center justify-content-center">
-                    <img className="card-image" src={props.card.image} alt="foodimg" />
+                    <img className="card-image" src={props.card.image} alt="menu item" />
                 </Col>
                 <Col>
                     <Row>
