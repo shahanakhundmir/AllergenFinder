@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, container } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import LogoTitle from './LogoTitle'
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -15,12 +15,22 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
         }
         render(<LogoTitle {...requiredProps} />)
         render(<NavDropdown />)
-        expect(screen.getAllByRole('button').getByText('Nandos (London, Wembley)')).toBeInTheDocument()
+        //expect(screen.getAllByRole('button').getByText('Nandos (London, Wembley)')).toBeInTheDocument()
       //  expect(screen.getByText('Nandos')).toBeInTheDocument()
+      const dropdown = screen.getAllByRole('button')
+        .filter(button => button.getByText ("Select Restaurant"))
+        //.getAllByRole('list').filter(list => list.textContent === "Nandos (London, Wembley)")
+        userEvent.click(dropdown) 
+        expect(screen.getByText('Nandos')).toBeInTheDocument()
+      
+    //.filter(button => button.textContent === "Nandos (London, Wembley)").length).toBe(1)
+
+        //userEvent.click(dropdown) 
+       // expect(screen.getByText('Nandos')).toBeInTheDocument()
     })
 
-
-
+    
+})
 /** test(`Given the required props, when a restaurant is selected from the list, 
     it should appear as the title`, () => {
 
@@ -54,7 +64,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
     }) */
     
 
-})
+
     /** test(`Given the required props, when an allergen icon is selected, 
        the function selectAllergen should be called`, () => {
            const requiredProps = {
