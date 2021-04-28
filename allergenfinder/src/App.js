@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarMenu from "./components/NavbarMenu/NavbarMenu";
 import LogoTitle from "./components/LogoTitle/LogoTitle";
 import Footer from "./components/Footer/Footer";
 import { Row, Col } from 'react-bootstrap';
@@ -46,6 +47,7 @@ function App() {
   }, [])
 
   useEffect(() => {
+
     let selectedMenu = cardInfo;
 
     if (selectedRestaurant !== "") {
