@@ -1,7 +1,5 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
-//import Tooltip from 'react-bootstrap/Tooltip';
-//import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import { Row, Col } from 'react-bootstrap';
 import "./Footer.css";
 
@@ -17,7 +15,7 @@ function Footer({ allergens, selectAllergen, selectedAllergens }) {
                                     key={allergen.allergen_id}
                                     className={`allergen-icon ${(selectedAllergens.filter(a => a === allergen.allergen_name)).length !== 0 ? 'allergen-selected' : ''}`}
                                     src={allergen.allergen_image}
-                                    alt={`${allergen.allergen_name} icon`}/>
+                                    alt={`${allergen.allergen_name} icon`} />
                             </Col>
                             <Col className="d-flex justify-content-center">
                                 <h6 className='allergen-text'>{allergen.allergen_name}</h6>

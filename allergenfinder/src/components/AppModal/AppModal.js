@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import Slider from "infinite-react-carousel";
 import "./AppModal.css";
@@ -21,7 +21,7 @@ function AppModal({
   const handleClose = () => onClose();
   const handleShow = () => show.setShow(true);
   ingredients = ingredients.split(",");
-  
+
   return (
     <div>
       <Modal className="Modal" show={status} onClose={handleClose}>
@@ -35,16 +35,16 @@ function AppModal({
               <p key={index}>{item}</p>
             ))}
           </p>
-         
+
           <div>
             <Slider className="modal-slider">
               <div className="factory Contan">
-                  <h6 className="title-font" style={{ textAlign: "center", color:"#EECA60" }}>Factory Contamination</h6>
-                  <h6 className="text-font" style={{ textAlign: "center" }}>{factory_contam}</h6>
+                <h6 className="title-font" style={{ textAlign: "center", color: "#EECA60" }}>Factory Contamination</h6>
+                <h6 className="text-font" style={{ textAlign: "center" }}>{factory_contam}</h6>
               </div>
               <div>
-                  <h6 className="title-font" style={{ textAlign: "center",color:"#EECA60" }}>Kitchen Contamination</h6>
-                  <h6 className="text-font" style={{ textAlign: "center" }}>{kitchen_contam}</h6>
+                <h6 className="title-font" style={{ textAlign: "center", color: "#EECA60" }}>Kitchen Contamination</h6>
+                <h6 className="text-font" style={{ textAlign: "center" }}>{kitchen_contam}</h6>
               </div>
             </Slider>
           </div>
