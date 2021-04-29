@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
-//import Card from 'react-bootstrap/Card'
-//import Badge from 'react-bootstrap/Badge'
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import Tooltip from 'react-bootstrap/Tooltip'
-//import CardDeck from 'react-bootstrap/CardDeck'
 import { Row, Col } from 'react-bootstrap';
 import './MenuCard.css'
 import AppModal from '../AppModal/AppModal';
-//comment
+
 function MenuCard(props) {
-    
+
     const selectedAllergens = props.selectedAllergens
     const composite = props.menuItemAllergens.filter(menuallergen => menuallergen.item_id === props.card.item_id)
     const allergens = props.allergens.filter(allergen =>
-                        composite.some(menuallergen => menuallergen.allergen_id === allergen.allergen_id))
+        composite.some(menuallergen => menuallergen.allergen_id === allergen.allergen_id))
     console.log(props.card.factory_contam)
     const [show, setShow] = useState(false)
 
@@ -26,16 +21,14 @@ function MenuCard(props) {
     }
 
     const renderAllergen = allergens.map((d) =>
-        
-            <img className="allergen-img" src={d.allergen_image} alt="" style={{}} ></img>
-        )
+        <img className="allergen-img" src={d.allergen_image} alt="alergen icon"></img>)
 
     return (
         <div onClick={onCardClick} className={`menu-card ${allergens.map(allergen =>
             allergen.allergen_name).filter(allergen => selectedAllergens.includes(allergen)).length !== 0 ? 'allergy' : ''}`}>
             <Row>
                 <Col xs={12} sm={4} md={4} lg={4} className="d-flex align-items-center justify-content-center">
-                    <img className="card-image" src={props.card.image} alt="foodimg" />
+                    <img className="card-image" src={props.card.image} alt="menu item" />
                 </Col>
                 <Col>
                     <Row>
@@ -78,17 +71,3 @@ function MenuCard(props) {
     );
 }
 export default MenuCard;
-
-/**
- *
- *  {console.log(props.card.title)}
-            {console.log('food allergens: ' + Object.values(props.card.allergen).map(allergen => allergen.tooltip))}
-            {console.log('selected allergens: ' + selectedAllergens )}
-            {intersection = Object.values(props.card.allergen).map(allergen => allergen.tooltip).filter(allergen => selectedAllergens.includes(allergen))}
-            {console.log('intersection: ' + intersection)}
-
-            //const intersection = Object.values(selectedAllergens).filter(element => allergen.allergenname.includes(element))
-
-
-    //<div onClick={onCardClick} className={`menu-card ${intersection.length === 0 ? 'allergy' : ''}`}>
- */

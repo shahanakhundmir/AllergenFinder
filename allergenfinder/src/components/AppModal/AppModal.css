@@ -7,7 +7,6 @@
 .Modal-image{
     width: 90%;
     height: 120px;
-  
     object-fit: contain;
 }
 .Modal-ingredients{
@@ -21,6 +20,5 @@
 
 .text-font{ 
     font-size: 1rem;
-    
     font-family: PTSans-Regular; 
 }
