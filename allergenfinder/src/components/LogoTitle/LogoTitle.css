@@ -1,43 +1,41 @@
-.logo-nav-bar{
-    background-color:white;
-    height: 60px;
-    padding-top:15px;
-    z-index:9999;
+.logo-nav-bar {
+  background-color: white;
+  height: 60px;
+  padding-top: 15px;
+  z-index: 9999;
 }
 
-.nav-font{
-    font-family:PermanentMarker-Regular;
-    color:  #EECA60!important;
-    font-size: 35px;
-    display:inline;
+.nav-font {
+  font-family: PermanentMarker-Regular;
+  color: #eeca60 !important;
+  font-size: 35px;
+  display: inline;
 }
 
-.header-logo{
-    width:1.5em;
-    height:1.5em;
-    align-items:center;
+.header-logo {
+  width: 1.5em;
+  height: 1.5em;
+  align-items: center;
 }
 
-.rest-dropdown{
-    border: 1px solid;
-    border-color:#EECA60;
-    border-radius: 5px;
-    color:#68869A;
-    margin-right: 80px;
+.rest-dropdown {
+  border: 1px solid;
+  border-color: #eeca60;
+  border-radius: 5px;
+  color: #68869a;
+  margin-right: 80px;
 }
 
-#dropdown-title{
-    color: #68869A;
+#dropdown-title {
+  color: #68869a;
 }
 
-.rest-name{
-    color: #68869A;
-    background-color:white;
+.rest-name {
+  color: #68869a;
+  background-color: white;
 }
 
-.rest-name:hover{
-    background-color: white;
-    color:#EECA60;
+.rest-name:hover {
+  background-color: white;
+  color: #eeca60;
 }
-
-
