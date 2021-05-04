@@ -1,44 +1,43 @@
-.footer{
-    height: 90px;
-    width:100%;
-    padding-left:8px;
-    padding-right:8px;
-    background-color:white;
-    display:flex;
-    justify-content: center;
+.footer {
+  height: 90px;
+  width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
 }
 
-.allergen-row{
-    margin-top:10px;
+.allergen-row {
+  margin-top: 10px;
 }
 
-.footer-brand{
-    margin:0;
-    padding:0;
-    display: flex;
-    overflow-x: auto;
+.footer-brand {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow-x: auto;
 }
 
-.allergen-icon{
-    height: 2.8rem;
-    width: 2.8rem;
-    margin: 0.3rem; 
+.allergen-icon {
+  height: 2.8rem;
+  width: 2.8rem;
+  margin: 0.3rem;
 }
 
 .allergen-icon:hover {
-    transform: scale(1.30);
+  transform: scale(1.3);
 }
 
-.allergen-selected{
-    transform: scale(1.30);
+.allergen-selected {
+  transform: scale(1.3);
 }
 
-.allergen-text{
-    font-size: 0.9rem;
-    font-family: PTSans-Regular;
-    text-overflow: ellipsis;
-    max-width: 80px;
-    white-space: nowrap;
-    overflow: hidden;
+.allergen-text {
+  font-size: 0.9rem;
+  font-family: PTSans-Regular;
+  text-overflow: ellipsis;
+  max-width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
 }
-

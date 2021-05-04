@@ -5,6 +5,8 @@ easily discover and identify the allergens contained within each menu item they 
 
 This website build by : Team Impact from Tech Returners
 
+![image](https://user-images.githubusercontent.com/61360028/116797093-bec2e180-aad9-11eb-93c8-db349dc26c2e.png)      ![image](https://user-images.githubusercontent.com/61360028/116797127-1e20f180-aada-11eb-8bd6-136ddec00180.png)
+
 
 
 **Prerequisites**
@@ -26,6 +28,7 @@ npm install -g create-react-app
 2. Install all the npm packages. Go into the project folder and type the following command to install all npm packages
 
 npm install
+
 npm install infinite-react-carousel --save
 
 3. In order to run the application Type the following command

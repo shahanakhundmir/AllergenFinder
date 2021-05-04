@@ -1,3 +1,8 @@
+import Navbar from 'react-bootstrap/Navbar'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+import Form from 'react-bootstrap/Form'
+import './LogoTitle.css'
+
 
 //import React, {useState} from 'react';
 import Navbar from 'react-bootstrap/Navbar';
@@ -29,5 +34,4 @@ function LogoTitle({restaurants, selectRestaurant, selectedRestaurant}) {
     </div>
   )
 }
-export default LogoTitle;
-
+export default LogoTitle
