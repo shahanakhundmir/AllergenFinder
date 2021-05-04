@@ -19,23 +19,34 @@ Refer to https://nodejs.org/en/ to install nodejs
 
 Install create-react-app npm package globally. This will help to easily run the project and also build the source files easily. Use the following command to install create-react-app
 
+```
 npm install -g create-react-app
+```
 
 **Cloning and Running the Application in local**
 
 1. Clone the project into local
 
 2. Install all the npm packages. Go into the project folder and type the following command to install all npm packages
-
+```
 npm install
 
 npm install infinite-react-carousel --save
+```
+3. In order to run the application type the following command
 
-3. In order to run the application Type the following command
-
+```
 npm start
+```
+
 
 The Application Runs on localhost:3000
+
+4. To run test cases use
+
+```
+npm test
+```
 
 
 **Resources**
