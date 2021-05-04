@@ -6,11 +6,14 @@ import Form from 'react-bootstrap/Form';
 import "./LogoTitle.css";
 
 function LogoTitle({restaurants, selectRestaurant, selectedRestaurant}) {
+  const reloadPage= ()=> {window.location.reload()}
   return (
     <div>
       <Navbar className="logo-nav-bar" collapseOnSelect expand="lg" fixed="top" >
-        <Navbar.Brand className='nav-font'>
-          <img className="header-logo" alt="logo" src="/images/crab.png" />{' '}Allergen Finder</Navbar.Brand>
+        <Navbar.Brand className='nav-font' onClick={()=>reloadPage()}>
+          <img className="header-logo" alt="logo" src="/images/crab.png"  />
+          {' '}
+           Allergen Finder</Navbar.Brand>
         <Form inline className="ml-auto"  >
           <NavDropdown title={`${ selectedRestaurant === "" ? 'Restaurant Name' : restaurants.filter(restaurant => 
                                 restaurant.rest_id === selectedRestaurant).map(a => a.rest_name + ' (' + a.rest_branch + ')')}`} 
